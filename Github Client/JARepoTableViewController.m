@@ -29,7 +29,7 @@
     [super viewDidLoad];
     
      self.edgesForExtendedLayout = UIRectEdgeNone;
-    self.clearsSelectionOnViewWillAppear = NO;
+    self.clearsSelectionOnViewWillAppear = YES;
     self.tableView.tableHeaderView = self.searchBar;
 }
 
@@ -42,7 +42,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 60.f;
+    return 80.f;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

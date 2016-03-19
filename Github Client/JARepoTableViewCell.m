@@ -15,6 +15,10 @@
 @property (nonatomic, weak) IBOutlet UILabel *repoTitleLabel;
 @property (nonatomic, weak) IBOutlet UILabel *repoDescriptionLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *languageLabel;
+@property (weak, nonatomic) IBOutlet UILabel *lastUpdatedLabel;
+@property (weak, nonatomic) IBOutlet UILabel *ownerNameLabel;
+
 // allows an avatar image download operation to know if it is old or not
 @property (nonatomic) NSInteger updateAvatarCount;
 
@@ -41,8 +45,20 @@
 
 - (void)setRepo:(OCTRepository *)repo
 {
-    self.repoTitleLabel.text = repo.name;
+    self.repoTitleLabel.text = [NSString stringWithFormat:@"%@ [%@]", repo.name, repo.language ?: @""];
+    
     self.repoDescriptionLabel.text = repo.repoDescription;
+    
+    self.languageLabel.text = @"";
+    
+    self.ownerNameLabel.text = repo.ownerLogin;
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+
+    formatter.dateStyle = NSDateFormatterShortStyle;
+    formatter.timeStyle = NSDateFormatterShortStyle;
+    NSString *dateTime = [formatter stringFromDate:repo.dateUpdated];
+    self.lastUpdatedLabel.text = [NSString stringWithFormat:@"Last Updated: %@", dateTime];
     
     [self updateAvatarWithImageAtURL:repo.ownerAvatarURL];
 }
