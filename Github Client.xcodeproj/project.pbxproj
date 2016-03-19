@@ -49,7 +49,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A42E86165A51B72EEBDD66C /* libPods-Github Client.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,8 +60,6 @@
 			children = (
 				1F9185551C9CF53C00528804 /* Github Client */,
 				1F9185541C9CF53C00528804 /* Products */,
-				7344C81DC72D063635B51D5E /* Pods */,
-				DD862BD0802808D63C8D4C5C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -154,11 +151,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1F91856A1C9CF53C00528804 /* Build configuration list for PBXNativeTarget "Github Client" */;
 			buildPhases = (
-				35D1FEF7BDD12B37F7F8265B /* Check Pods Manifest.lock */,
 				1F91854F1C9CF53C00528804 /* Sources */,
 				1F9185501C9CF53C00528804 /* Frameworks */,
 				1F9185511C9CF53C00528804 /* Resources */,
-				0099AF7859F5B758941FC1E2 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -213,39 +208,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		0099AF7859F5B758941FC1E2 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Github Client/Pods-Github Client-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		35D1FEF7BDD12B37F7F8265B /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1F91854F1C9CF53C00528804 /* Sources */ = {
@@ -368,7 +330,6 @@
 		};
 		1F91856B1C9CF53C00528804 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C53DD50BA95F97454D612466 /* Pods-Github Client.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Github Client/Info.plist";
@@ -380,7 +341,6 @@
 		};
 		1F91856C1C9CF53C00528804 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A2131094E0F2B3A34ECC33B2 /* Pods-Github Client.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Github Client/Info.plist";
@@ -409,7 +369,6 @@
 				1F91856C1C9CF53C00528804 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
