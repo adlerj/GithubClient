@@ -6,9 +6,9 @@
 //  Copyright © 2016 Jadler. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import <OctoKit/OctoKit.h>
+#import <UIKit/UIKit.h>
 
 @interface JARepoTableViewCell : UITableViewCell
-@property (nonatomic, weak) OCTRepository *repo;
+@property(nonatomic, weak) OCTRepository *repo;
 @end

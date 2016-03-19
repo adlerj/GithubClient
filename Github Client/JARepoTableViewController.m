@@ -28,39 +28,20 @@
     
     [super viewDidLoad];
     
-     self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     self.clearsSelectionOnViewWillAppear = YES;
     self.tableView.tableHeaderView = self.searchBar;
+    self.title = @"GitHub Repo Searcher";
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-#pragma mark - Table view data source
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 80.f;
-}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
-    return self.searchResults.count;
-}
-
+#pragma mark - Lazy Instantiations
 - (UISearchBar *)searchBar
 {
     if (!_searchBar) {
         
         _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, self.tableView.bounds.size.width, 90.f)];
         _searchBar.delegate = self;
+        _searchBar.showsCancelButton = YES;
     }
     
     return _searchBar;
@@ -76,6 +57,45 @@
     return _searchResults;
 }
 
+#pragma mark - TableView Datasource and Delegate methods
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    JARepoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"repoCell" forIndexPath:indexPath];
+    
+    cell.repo = self.searchResults[indexPath.row];
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:kWebViewControllerSegueIdentifier sender:self];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 80.f;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return self.searchResults.count;
+}
+
+
+#pragma mark - Helpers
+
+// Proxied for easier access
+- (OCTClient *)client
+{
+    return [JAClientManager defaultManager].client;
+}
 
 - (void)performRequest:(NSString*)searchTerm {
     
@@ -86,7 +106,7 @@
     // This method actually kicks off the request, handling any results using the
     // blocks below.
     [request subscribeNext:^(OCTRepositoriesSearchResult *searchResult) {
-
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             
             [weakSelf.tableView beginUpdates];
@@ -104,68 +124,42 @@
         });
         
     } error:^(NSError *error) {
-        // Invoked when an error occurs.
-        //
-        // Your `next` and `completed` blocks won't be invoked after this point.
-    } completed:^{
-        // Invoked when the request completes and we've received/processed all the
-        // results.
-        //
-        // Your `next` and `error` blocks won't be invoked after this point.
-    }];
+        
+        NSLog(@"Error with download: %@", error);
+    } completed:^() {}];
     
 }
 
-#pragma mark - Helpers
-
-- (OCTClient *)client
-{
-    return [JAClientManager defaultManager].client;
-}
 
 #pragma mark - Search Bar Delegate
-
-- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
-{
-    
-}
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
     self.searchResults = nil;
     [self.tableView reloadData];
     
+    [self.searchBar resignFirstResponder];
+    
     [self performRequest:searchBar.text];
 }
 
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    JARepoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"repoCell" forIndexPath:indexPath];
-    
-    cell.repo = self.searchResults[indexPath.row];
-    
-    return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
 {
-    [self performSegueWithIdentifier:kWebViewControllerSegueIdentifier sender:self];
+    [searchBar resignFirstResponder];
 }
-
 
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-   
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
     if ([segue.identifier isEqualToString:kWebViewControllerSegueIdentifier]) {
         JAWebViewController *webVC = (JAWebViewController*)[segue destinationViewController];
         
         OCTRepository *repo = self.searchResults[self.tableView.indexPathForSelectedRow.row];
         webVC.url = repo.HTMLURL;
+        webVC.title = repo.name;
     }
-    
 }
 
 

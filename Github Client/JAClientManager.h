@@ -11,8 +11,8 @@
 
 @interface JAClientManager : NSObject
 
-@property (nonatomic, strong) OCTClient *client;
+@property(nonatomic, strong) OCTClient *client;
 
-+ (JAClientManager*)defaultManager;
++ (JAClientManager *)defaultManager;
 
 @end

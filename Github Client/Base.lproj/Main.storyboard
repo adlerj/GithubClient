@@ -7,10 +7,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Repo Table View Controller-->
+        <!--Search GitHub Repos-->
         <scene sceneID="hDZ-TZ-6C6">
             <objects>
-                <tableViewController id="mAs-52-csM" customClass="JARepoTableViewController" sceneMemberID="viewController">
+                <tableViewController title="Search GitHub Repos" id="mAs-52-csM" customClass="JARepoTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="aiZ-R4-ZOK">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,7 +24,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am a title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hC9-JS-HMa">
-                                            <rect key="frame" x="86" y="8" width="506" height="21"/>
+                                            <rect key="frame" x="68" y="8" width="524" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="8tt-Id-MFD"/>
                                             </constraints>
@@ -33,7 +33,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am a description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cN3-LO-AF4">
-                                            <rect key="frame" x="86" y="32" width="506" height="21"/>
+                                            <rect key="frame" x="68" y="32" width="524" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="XOF-ne-xr7"/>
                                             </constraints>
@@ -78,7 +78,7 @@
                                         <constraint firstItem="sJp-H6-Zuk" firstAttribute="top" secondItem="qZt-5S-kWj" secondAttribute="bottom" constant="3" id="Ero-hL-wwg"/>
                                         <constraint firstAttribute="bottom" secondItem="WjR-PD-6s4" secondAttribute="bottom" constant="0.5" id="LnN-i6-i7a"/>
                                         <constraint firstItem="WjR-PD-6s4" firstAttribute="trailing" secondItem="VBw-9u-Tn5" secondAttribute="trailingMargin" id="MF7-me-hZn"/>
-                                        <constraint firstItem="hC9-JS-HMa" firstAttribute="leading" secondItem="qZt-5S-kWj" secondAttribute="trailing" constant="33" id="e2W-cs-6JY"/>
+                                        <constraint firstItem="hC9-JS-HMa" firstAttribute="leading" secondItem="qZt-5S-kWj" secondAttribute="trailing" constant="15" id="e2W-cs-6JY"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="hC9-JS-HMa" secondAttribute="trailing" id="ivz-8T-wOU"/>
                                         <constraint firstItem="cN3-LO-AF4" firstAttribute="top" secondItem="hC9-JS-HMa" secondAttribute="bottom" constant="3" id="lTX-2J-WfP"/>
                                         <constraint firstItem="cN3-LO-AF4" firstAttribute="trailing" secondItem="hC9-JS-HMa" secondAttribute="trailing" id="oeu-7V-5bF"/>

@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface JAWebViewController : UIViewController
-@property (nonatomic, strong) NSURL *url;
+
+@property(nonatomic, strong) NSURL *url;
+
 @end
