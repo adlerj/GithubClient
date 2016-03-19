@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <OctoKit/OctoKit.h>
 
 @interface JARepoTableViewCell : UITableViewCell
-
+@property (nonatomic, weak) OCTRepository *repo;
 @end

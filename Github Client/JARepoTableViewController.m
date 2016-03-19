@@ -8,6 +8,7 @@
 
 #import "JARepoTableViewController.h"
 #import "JAClientManager.h"
+#import "JARepoTableViewCell.h"
 
 #define webViewControllerSegueIdentifier @"webViewControllerSegue"
 
@@ -15,6 +16,8 @@
 
 @property (nonatomic, strong) UISearchBar *searchBar;
 @property (nonatomic, readonly) OCTClient *client;
+
+@property (nonatomic, strong) NSMutableArray *searchResults;
 
 @end
 
@@ -38,12 +41,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return 0;
+    return self.searchResults.count;
 }
 
 - (UISearchBar *)searchBar
@@ -57,9 +60,54 @@
     return _searchBar;
 }
 
-- (NSArray *)repositoriesForSearch:(NSString*)searchTerm {
+- (NSMutableArray *)searchResults
+{
+    if (!_searchResults) {
+        
+        _searchResults = [NSMutableArray array];
+    }
     
-    RACSignal *request = self.client searchRepositoriesWithQuery:<#(NSString *)#> orderBy:<#(NSString *)#> ascending:<#(BOOL)#>
+    return _searchResults;
+}
+
+
+- (void)performRequest:(NSString*)searchTerm {
+    
+    RACSignal *request = [self.client searchRepositoriesWithQuery:searchTerm orderBy:nil ascending:YES];
+    
+    __weak typeof(self) weakSelf = self;
+    
+    // This method actually kicks off the request, handling any results using the
+    // blocks below.
+    [request subscribeNext:^(OCTRepositoriesSearchResult *searchResult) {
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [weakSelf.tableView beginUpdates];
+            
+            for (OCTRepository *repo in searchResult.repositories) {
+                
+                [weakSelf.searchResults addObject:repo];
+                
+                [weakSelf.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:weakSelf.searchResults.count - 1
+                                                                                inSection: 0]]
+                                          withRowAnimation:UITableViewRowAnimationRight];
+            }
+            
+            [weakSelf.tableView endUpdates];
+        });
+        
+    } error:^(NSError *error) {
+        // Invoked when an error occurs.
+        //
+        // Your `next` and `completed` blocks won't be invoked after this point.
+    } completed:^{
+        // Invoked when the request completes and we've received/processed all the
+        // results.
+        //
+        // Your `next` and `error` blocks won't be invoked after this point.
+    }];
+    
 }
 
 #pragma mark - Helpers
@@ -78,18 +126,22 @@
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
+    self.searchResults = nil;
+    [self.tableView reloadData];
     
+    [self performRequest:searchBar.text];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
+    JARepoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"repoCell" forIndexPath:indexPath];
+    
+    cell.repo = self.searchResults[indexPath.row];
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.

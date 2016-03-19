@@ -29,6 +29,11 @@
     // Configure the view for the selected state
 }
 
+- (void)setRepo:(OCTRepository *)repo
+{
+    self.repoTitleLabel.text = repo.name;
+}
+
 
 
 @end
