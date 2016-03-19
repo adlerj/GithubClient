@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  JAWebViewController.h
 //  Github Client
 //
 //  Created by Jeffrey Adler on 3/18/16.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface JAWebViewController : UIViewController
 
 @end
-
