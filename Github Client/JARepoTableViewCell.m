@@ -15,12 +15,22 @@
 @property (nonatomic, weak) IBOutlet UILabel *repoTitleLabel;
 @property (nonatomic, weak) IBOutlet UILabel *repoDescriptionLabel;
 
+// allows an avatar image download operation to know if it is old or not
+@property (nonatomic) NSInteger updateAvatarCount;
+
 @end
 
 @implementation JARepoTableViewCell
 
-- (void)awakeFromNib {
-    // Initialization code
+- (instancetype)init
+{
+    self = [super init];
+    
+    if (self) {
+        self.updateAvatarCount = 0;
+    }
+    
+    return self;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -32,6 +42,38 @@
 - (void)setRepo:(OCTRepository *)repo
 {
     self.repoTitleLabel.text = repo.name;
+    self.repoDescriptionLabel.text = repo.repoDescription;
+    
+    [self updateAvatarWithImageAtURL:repo.ownerAvatarURL];
+}
+
+- (void)updateAvatarWithImageAtURL:(NSURL*)url
+{
+    self.userAvatarImageView.image = nil;
+    self.updateAvatarCount++;
+    
+    NSInteger currentCount = self.updateAvatarCount;
+    
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+    AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] initWithRequest:urlRequest];
+    
+    __weak typeof(self) weakSelf = self;
+    
+    [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            if (currentCount == weakSelf.updateAvatarCount) {
+                
+                weakSelf.userAvatarImageView.image = [UIImage imageWithData:responseObject];
+            }
+        });
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Image error: %@", error);
+    }];
+    
+    [requestOperation start];
 }
 
 

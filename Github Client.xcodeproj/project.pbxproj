@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1F9185581C9CF53C00528804 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9185571C9CF53C00528804 /* main.m */; };
 		1F91855B1C9CF53C00528804 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F91855A1C9CF53C00528804 /* AppDelegate.m */; };
-		1F91855E1C9CF53C00528804 /* JALoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F91855D1C9CF53C00528804 /* JALoginViewController.m */; };
 		1F9185611C9CF53C00528804 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F91855F1C9CF53C00528804 /* Main.storyboard */; };
 		1F9185631C9CF53C00528804 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F9185621C9CF53C00528804 /* Assets.xcassets */; };
 		1F9185661C9CF53C00528804 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F9185641C9CF53C00528804 /* LaunchScreen.storyboard */; };
@@ -27,8 +26,6 @@
 		1F9185571C9CF53C00528804 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1F9185591C9CF53C00528804 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1F91855A1C9CF53C00528804 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1F91855C1C9CF53C00528804 /* JALoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JALoginViewController.h; sourceTree = "<group>"; };
-		1F91855D1C9CF53C00528804 /* JALoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JALoginViewController.m; sourceTree = "<group>"; };
 		1F9185601C9CF53C00528804 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1F9185621C9CF53C00528804 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F9185651C9CF53C00528804 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -116,8 +113,6 @@
 		1FE771E71C9CFC98008AB9CF /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1F91855C1C9CF53C00528804 /* JALoginViewController.h */,
-				1F91855D1C9CF53C00528804 /* JALoginViewController.m */,
 				1FE771E81C9CFCE0008AB9CF /* JARepoTableViewController.h */,
 				1FE771E91C9CFCE0008AB9CF /* JARepoTableViewController.m */,
 				1FE771F01C9CFD7E008AB9CF /* JAWebViewController.h */,
@@ -214,7 +209,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F91855E1C9CF53C00528804 /* JALoginViewController.m in Sources */,
 				1F91855B1C9CF53C00528804 /* AppDelegate.m in Sources */,
 				1FE771F21C9CFD7E008AB9CF /* JAWebViewController.m in Sources */,
 				1FE771EA1C9CFCE0008AB9CF /* JARepoTableViewController.m in Sources */,
