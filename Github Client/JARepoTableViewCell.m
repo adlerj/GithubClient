@@ -8,12 +8,12 @@
 
 #import "JARepoTableViewCell.h"
 
+
 @interface JARepoTableViewCell()
 
-@property (weak, nonatomic) IBOutlet UIImageView *userAvatarImageView;
-@property (weak, nonatomic) IBOutlet UILabel *repoTitleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *repoDescriptionLabel;
-
+@property (nonatomic, weak) IBOutlet UIImageView *userAvatarImageView;
+@property (nonatomic, weak) IBOutlet UILabel *repoTitleLabel;
+@property (nonatomic, weak) IBOutlet UILabel *repoDescriptionLabel;
 
 @end
 
@@ -28,5 +28,7 @@
 
     // Configure the view for the selected state
 }
+
+
 
 @end

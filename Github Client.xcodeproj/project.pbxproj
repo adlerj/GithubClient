@@ -16,6 +16,7 @@
 		1FE771EA1C9CFCE0008AB9CF /* JARepoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE771E91C9CFCE0008AB9CF /* JARepoTableViewController.m */; };
 		1FE771EE1C9CFD1B008AB9CF /* JARepoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE771ED1C9CFD1B008AB9CF /* JARepoTableViewCell.m */; };
 		1FE771F21C9CFD7E008AB9CF /* JAWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE771F11C9CFD7E008AB9CF /* JAWebViewController.m */; };
+		1FE771F61C9D0080008AB9CF /* JAClientManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE771F51C9D0080008AB9CF /* JAClientManager.m */; };
 		2A42E86165A51B72EEBDD66C /* libPods-Github Client.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D86F047379CD28C9074711D /* libPods-Github Client.a */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,8 @@
 		1FE771ED1C9CFD1B008AB9CF /* JARepoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JARepoTableViewCell.m; sourceTree = "<group>"; };
 		1FE771F01C9CFD7E008AB9CF /* JAWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JAWebViewController.h; sourceTree = "<group>"; };
 		1FE771F11C9CFD7E008AB9CF /* JAWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JAWebViewController.m; sourceTree = "<group>"; };
+		1FE771F41C9D0080008AB9CF /* JAClientManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JAClientManager.h; sourceTree = "<group>"; };
+		1FE771F51C9D0080008AB9CF /* JAClientManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JAClientManager.m; sourceTree = "<group>"; };
 		8D86F047379CD28C9074711D /* libPods-Github Client.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Github Client.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2131094E0F2B3A34ECC33B2 /* Pods-Github Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Github Client.release.xcconfig"; path = "Pods/Target Support Files/Pods-Github Client/Pods-Github Client.release.xcconfig"; sourceTree = "<group>"; };
 		C53DD50BA95F97454D612466 /* Pods-Github Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Github Client.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Github Client/Pods-Github Client.debug.xcconfig"; sourceTree = "<group>"; };
@@ -74,6 +77,7 @@
 		1F9185551C9CF53C00528804 /* Github Client */ = {
 			isa = PBXGroup;
 			children = (
+				1FE771F31C9D0069008AB9CF /* Managers */,
 				1FE771EB1C9CFD00008AB9CF /* Views */,
 				1FE771E71C9CFC98008AB9CF /* View Controllers */,
 				1F9185561C9CF53C00528804 /* Supporting Files */,
@@ -115,6 +119,15 @@
 				1FE771ED1C9CFD1B008AB9CF /* JARepoTableViewCell.m */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		1FE771F31C9D0069008AB9CF /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				1FE771F41C9D0080008AB9CF /* JAClientManager.h */,
+				1FE771F51C9D0080008AB9CF /* JAClientManager.m */,
+			);
+			name = Managers;
 			sourceTree = "<group>";
 		};
 		7344C81DC72D063635B51D5E /* Pods */ = {
@@ -244,6 +257,7 @@
 				1FE771F21C9CFD7E008AB9CF /* JAWebViewController.m in Sources */,
 				1FE771EA1C9CFCE0008AB9CF /* JARepoTableViewController.m in Sources */,
 				1FE771EE1C9CFD1B008AB9CF /* JARepoTableViewCell.m in Sources */,
+				1FE771F61C9D0080008AB9CF /* JAClientManager.m in Sources */,
 				1F9185581C9CF53C00528804 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

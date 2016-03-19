@@ -8,11 +8,13 @@
 
 #import "JALoginViewController.h"
 
-#define repoTableViewControllerSegueIdentifier @"repoTableViewSegue"
+#define kRepoTableViewControllerSegueIdentifier @"repoTableViewSegue"
 
 @interface JALoginViewController ()
+
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+
 @property (weak, nonatomic) IBOutlet UIButton *resetButton;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 
@@ -25,9 +27,14 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 - (IBAction)resetButtonPressed:(UIButton *)sender {
+    
+    self.usernameTextField.text = @"";
+    self.passwordTextField.text = @"";
 }
 
 - (IBAction)loginButtonPressed:(UIButton *)sender {
+    
+    [self performSegueWithIdentifier:kRepoTableViewControllerSegueIdentifier sender:self];
 }
 
 - (void)didReceiveMemoryWarning {

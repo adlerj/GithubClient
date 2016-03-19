@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mAs-52-csM">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -8,6 +8,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="JALoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
@@ -61,12 +62,10 @@
                         <outlet property="passwordTextField" destination="B8k-8n-cEA" id="4Va-ke-ivo"/>
                         <outlet property="resetButton" destination="GoX-qE-mZ2" id="hFx-bH-TQh"/>
                         <outlet property="usernameTextField" destination="AJe-ci-dwf" id="9G6-yO-yjm"/>
-                        <segue destination="mAs-52-csM" kind="show" identifier="repoTableViewSegue" id="wWs-f6-SdQ"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="550" y="539"/>
+            <point key="canvasLocation" x="333" y="635"/>
         </scene>
         <!--Repo Table View Controller-->
         <scene sceneID="hDZ-TZ-6C6">
@@ -114,9 +113,6 @@
                             <outlet property="delegate" destination="mAs-52-csM" id="hmO-Sf-w4o"/>
                         </connections>
                     </tableView>
-                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="CkN-o6-EV5">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </refreshControl>
                     <connections>
                         <segue destination="QSx-31-yQD" kind="show" identifier="webViewControllerSegue" id="R8O-Vz-wNg"/>
                     </connections>

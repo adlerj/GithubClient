@@ -7,19 +7,26 @@
 //
 
 #import "JARepoTableViewController.h"
+#import "JAClientManager.h"
 
 #define webViewControllerSegueIdentifier @"webViewControllerSegue"
 
-@interface JARepoTableViewController ()
+@interface JARepoTableViewController ()  <UISearchBarDelegate>
+
+@property (nonatomic, strong) UISearchBar *searchBar;
+@property (nonatomic, readonly) OCTClient *client;
 
 @end
 
-@implementation JARepoTableViewController
+@implementation JARepoTableViewController 
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     
-     self.clearsSelectionOnViewWillAppear = NO;
+     self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.clearsSelectionOnViewWillAppear = NO;
+    self.tableView.tableHeaderView = self.searchBar;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,13 +37,48 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
+
     return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
+
     return 0;
+}
+
+- (UISearchBar *)searchBar
+{
+    if (!_searchBar) {
+        
+        _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, self.tableView.bounds.size.width, 44.f)];
+        _searchBar.delegate = self;
+    }
+    
+    return _searchBar;
+}
+
+- (NSArray *)repositoriesForSearch:(NSString*)searchTerm {
+    
+    RACSignal *request = self.client sea
+}
+
+#pragma mark - Helpers
+
+- (OCTClient *)client
+{
+    return [JAClientManager defaultManager].client;
+}
+
+#pragma mark - Search Bar Delegate
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    
 }
 
 /*
