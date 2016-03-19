@@ -59,7 +59,7 @@
 
 - (NSArray *)repositoriesForSearch:(NSString*)searchTerm {
     
-    RACSignal *request = self.client sea
+    RACSignal *request = self.client searchRepositoriesWithQuery:<#(NSString *)#> orderBy:<#(NSString *)#> ascending:<#(BOOL)#>
 }
 
 #pragma mark - Helpers
