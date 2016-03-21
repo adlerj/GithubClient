@@ -39,7 +39,7 @@
 {
     if (!_searchBar) {
         
-        _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, self.tableView.bounds.size.width, 90.f)];
+        _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, self.tableView.bounds.size.width, 44.f)];
         _searchBar.delegate = self;
         _searchBar.showsCancelButton = YES;
     }

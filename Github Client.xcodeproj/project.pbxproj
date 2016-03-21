@@ -12,9 +12,9 @@
 		1F9185611C9CF53C00528804 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F91855F1C9CF53C00528804 /* Main.storyboard */; };
 		1F9185631C9CF53C00528804 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F9185621C9CF53C00528804 /* Assets.xcassets */; };
 		1F9185661C9CF53C00528804 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F9185641C9CF53C00528804 /* LaunchScreen.storyboard */; };
-		1FE2250C1C9D10FE00614667 /* OctoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE2250B1C9D10FE00614667 /* OctoKit.framework */; };
-		1FE2250E1C9D110300614667 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE2250D1C9D110300614667 /* AFNetworking.framework */; };
-		1FE225101C9D111900614667 /* ISO8601DateFormatter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE2250F1C9D111900614667 /* ISO8601DateFormatter.framework */; };
+		1FE2252E1C9E0A1E00614667 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE2252B1C9E0A1E00614667 /* AFNetworking.framework */; };
+		1FE2252F1C9E0A1E00614667 /* ISO8601DateFormatter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE2252C1C9E0A1E00614667 /* ISO8601DateFormatter.framework */; };
+		1FE225301C9E0A1E00614667 /* OctoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE2252D1C9E0A1E00614667 /* OctoKit.framework */; };
 		1FE771EA1C9CFCE0008AB9CF /* JARepoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE771E91C9CFCE0008AB9CF /* JARepoTableViewController.m */; };
 		1FE771EE1C9CFD1B008AB9CF /* JARepoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE771ED1C9CFD1B008AB9CF /* JARepoTableViewCell.m */; };
 		1FE771F21C9CFD7E008AB9CF /* JAWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE771F11C9CFD7E008AB9CF /* JAWebViewController.m */; };
@@ -30,9 +30,9 @@
 		1F9185621C9CF53C00528804 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F9185651C9CF53C00528804 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F9185671C9CF53C00528804 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1FE2250B1C9D10FE00614667 /* OctoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OctoKit.framework; path = "../octokit.objc/build/Debug-iphoneos/OctoKit.framework"; sourceTree = "<group>"; };
-		1FE2250D1C9D110300614667 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = "../octokit.objc/External/OctoKitDependencies/build/Debug-iphoneos/AFNetworking.framework"; sourceTree = "<group>"; };
-		1FE2250F1C9D111900614667 /* ISO8601DateFormatter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ISO8601DateFormatter.framework; path = "../octokit.objc/External/OctoKitDependencies/build/Debug-iphoneos/ISO8601DateFormatter.framework"; sourceTree = "<group>"; };
+		1FE2252B1C9E0A1E00614667 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = "octokit.objc/External/OctoKitDependencies/build/Debug-iphoneos/AFNetworking.framework"; sourceTree = SOURCE_ROOT; };
+		1FE2252C1C9E0A1E00614667 /* ISO8601DateFormatter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ISO8601DateFormatter.framework; path = "octokit.objc/External/OctoKitDependencies/build/Debug-iphoneos/ISO8601DateFormatter.framework"; sourceTree = SOURCE_ROOT; };
+		1FE2252D1C9E0A1E00614667 /* OctoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OctoKit.framework; path = "octokit.objc/build/Debug-iphoneos/OctoKit.framework"; sourceTree = SOURCE_ROOT; };
 		1FE771E81C9CFCE0008AB9CF /* JARepoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JARepoTableViewController.h; sourceTree = "<group>"; };
 		1FE771E91C9CFCE0008AB9CF /* JARepoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JARepoTableViewController.m; sourceTree = "<group>"; };
 		1FE771EC1C9CFD1B008AB9CF /* JARepoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JARepoTableViewCell.h; sourceTree = "<group>"; };
@@ -48,9 +48,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FE225101C9D111900614667 /* ISO8601DateFormatter.framework in Frameworks */,
-				1FE2250E1C9D110300614667 /* AFNetworking.framework in Frameworks */,
-				1FE2250C1C9D10FE00614667 /* OctoKit.framework in Frameworks */,
+				1FE2252E1C9E0A1E00614667 /* AFNetworking.framework in Frameworks */,
+				1FE2252F1C9E0A1E00614667 /* ISO8601DateFormatter.framework in Frameworks */,
+				1FE225301C9E0A1E00614667 /* OctoKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,9 +102,9 @@
 		1FE225111C9D118C00614667 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1FE2250F1C9D111900614667 /* ISO8601DateFormatter.framework */,
-				1FE2250D1C9D110300614667 /* AFNetworking.framework */,
-				1FE2250B1C9D10FE00614667 /* OctoKit.framework */,
+				1FE2252B1C9E0A1E00614667 /* AFNetworking.framework */,
+				1FE2252C1C9E0A1E00614667 /* ISO8601DateFormatter.framework */,
+				1FE2252D1C9E0A1E00614667 /* OctoKit.framework */,
 			);
 			name = Frameworks;
 			path = "Github Client";
@@ -260,6 +260,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_ON_DEMAND_RESOURCES = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -277,6 +278,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -305,6 +307,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_ON_DEMAND_RESOURCES = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -315,6 +318,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -330,6 +334,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/octokit.objc/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/octokit.objc/External/OctoKitDependencies/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/octokit.objc/Carthage/Checkouts/Mantle/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/octokit.objc/Carthage/Checkouts/ReactiveCocoa/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/Github",
+					Client,
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(BUILD_ROOT)/../IntermediateBuildFilesPath/UninstalledProducts/include",
@@ -337,6 +345,7 @@
 				);
 				INFOPLIST_FILE = "Github Client/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jadler.me.Github-Client";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -351,6 +360,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/octokit.objc/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/octokit.objc/External/OctoKitDependencies/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/octokit.objc/Carthage/Checkouts/Mantle/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/octokit.objc/Carthage/Checkouts/ReactiveCocoa/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/Github",
+					Client,
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(BUILD_ROOT)/../IntermediateBuildFilesPath/UninstalledProducts/include",
